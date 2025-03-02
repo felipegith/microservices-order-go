@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: ordermysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: orderdb
+      MYSQL_PASSWORD: root
+    ports:
+      - 3303:3306
+    volumes:
+      - .docker/mysql:/var/lib/mysql
+
+      
